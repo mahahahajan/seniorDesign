@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
         <meta charset="UTF-8" />
+        <meta http-equiv="refresh" content="5">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Fake News Classifier</title>
         <link rel="icon" href="{{ url_for('static', filename='img/icon.png') }}" type="image/png" />
@@ -26,15 +28,33 @@
         <div id="particles-js"></div>
         <div id="content">
             <h1 id="header">Power Detector</h1>
+            <script>
+                function update_values() {
+                    url = '/updateData';
+                    fetch(url, {method:'POST'}).then(function(response) {
+                        return response.json();
+                      })
+                      .then(function(myJson)
+                      {
+                        store = myJson;
+                        //This line prints out "{somedata":"somedatavalue","somedata1":"somedatavalue1"}" every 2000 milliseconds
+                        console.log(store);
+                      });
+                }
+                setInterval(update_values, 2000);
+            </script>
             <div id="spacer"></div>
+            <!-- {% for row in data2 %}
+            <p> {{ row }} </p>
+            {% endfor %} -->
             <div class="table">
                 <div class="flex wrap">
-                    {% for row in data %} 
+                    {% for row in data %}
                     <div class="col">
                         <img src="{{ url_for('static', filename='img/' + row[0]) }}" alt="Avatar">
                         <div class="container">
-                            <h4><b>{{ row[2] }} </b></h4>
-                            <p>{{ row[3] }}</p>
+                            <h4><b>{{ row[1] }} </b></h4>
+                            <p>{{ row[2] }}</p>
                         </div>
                     </div>
                     {% endfor %}
