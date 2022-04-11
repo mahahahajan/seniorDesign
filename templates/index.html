@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="UTF-8" />
-        <meta http-equiv="refresh" content="5">
+        <!-- <meta http-equiv="refresh" content="5"> -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Fake News Classifier</title>
         <link rel="icon" href="{{ url_for('static', filename='img/icon.png') }}" type="image/png" />
@@ -50,7 +50,7 @@
             <div class="table">
                 <div class="flex wrap">
                     {% for row in data %}
-                    <div class="col">
+                    <div class="col {{ row[3] }}">
                         <img src="{{ url_for('static', filename='img/' + row[0]) }}" alt="Avatar">
                         <div class="container">
                             <h4><b>{{ row[1] }} </b></h4>

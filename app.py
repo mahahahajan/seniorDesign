@@ -1,10 +1,11 @@
 from flask import Flask, request, redirect, url_for, jsonify, send_file, make_response, render_template
 
-lamp = ("lamp.png", "Lamp", "A lamp is on in the house")
-fridge = ("lamp.png", "Fridge", "This is a fridge")
-hairdryer = ("lamp.png", "Hairdryer", "Time to style your harir")
-television = ("tv.png", "TV", "A tv is on")
-coffee = ("coffeemachine.png", "Coffee Machine", "A coffee machine is on and brewing coffee")
+no_device = ("lamp.png", "No devices found", "Hm.. it doesn't look like you have anything plugged in", "noDevice")
+lamp = ("lamp.png", "Lamp", "A lamp is on in the house", "")
+fridge = ("lamp.png", "Fridge", "This is a fridge", "")
+hairdryer = ("lamp.png", "Hairdryer", "Time to style your harir", "")
+television = ("tv.png", "TV", "A tv is on", "")
+coffee = ("coffeemachine.png", "Coffee Machine", "A coffee machine is on and brewing coffee", "")
 
 
 
@@ -70,9 +71,9 @@ def get_data():
 
 def convert_num_to_devices(num):
     if num == '0':
-        return "No devices"
+        return (no_device, )
     elif num == '1':
-        return "noise"
+        return (no_device, )
     elif num == '2':
         # lamp
         data = (lamp,)
@@ -187,7 +188,7 @@ def index():
     try:
         print(data2)
         data = convert_num_to_devices(data2)
-        print("Data is " + data[0][1])
+        # print("Data is " + data[0][1])
         return render_template('index.html',  fields=fields, data=data, data2=data2)
     except Exception as e:
         print("error: " + str(e))
