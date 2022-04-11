@@ -3,7 +3,7 @@ import requests
 import os 
 
 os.environ['NO_PROXY'] = '127.0.0.1'
-url = 'http://127.0.0.1:8010/getData'
+url = 'https://power-detector.herokuapp.com/getData'
 headers = { "content-type": "application/json", "charset": 'utf-8'}
 
 val1 = {"value" : '0'}

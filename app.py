@@ -1,9 +1,9 @@
 from flask import Flask, request, redirect, url_for, jsonify, send_file, make_response, render_template
 
-no_device = ("lamp.png", "No devices found", "Hm.. it doesn't look like you have anything plugged in", "noDevice")
+no_device = ("noDevice.png", "No devices found", "Hm.. it doesn't look like you have anything plugged in", "noDevice")
 lamp = ("lamp.png", "Lamp", "A lamp is on in the house", "")
-fridge = ("lamp.png", "Fridge", "This is a fridge", "")
-hairdryer = ("lamp.png", "Hairdryer", "Time to style your harir", "")
+fridge = ("fridge.png", "Fridge", "This is a fridge", "")
+hairdryer = ("hairdryer.png", "Hairdryer", "Time to style your harir", "")
 television = ("tv.png", "TV", "A tv is on", "")
 coffee = ("coffeemachine.png", "Coffee Machine", "A coffee machine is on and brewing coffee", "")
 
