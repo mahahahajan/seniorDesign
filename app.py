@@ -21,7 +21,7 @@ data = (
     ("lamp.png", "Lamp", "A lamp is on in the house")
 )
 
-data2 = '0'
+data2 = '22'
 
 @app.route('/getData', methods=['GET', 'POST'])
 def get_data():
