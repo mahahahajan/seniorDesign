@@ -79,18 +79,18 @@ def convert_num_to_devices(num):
         return data
     elif num == '3':
         # fridge
-        data = (fridge)
+        data = (fridge,)
         return data
         return "fridge"
     elif num == '4':
         # hairdryer
-        data = (hairdryer)
+        data = (hairdryer,)
         return data
     elif num == '5':
-        data = (television)
+        data = (television,)
         return data
     elif num == '6':
-        data = (coffee)
+        data = (coffee,)
         return data
     elif num == '7':
         data = (fridge, lamp)
