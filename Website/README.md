@@ -1,4 +1,4 @@
-<h1> How to run the webserver: </h1>
+# How to run the webserver: 
 Run the webserver locally via 
 
 ``` python3 app.py ```
@@ -9,9 +9,9 @@ Deploy a new version
 ``` git push heroku master ```
 
 
-<h1>Recreating this website: </h1>
+# Recreating this website:
 
-<h3> In order to spin up your own instance of the website from this repo </h3>
+### In order to spin up your own instance of the website from this repo
 
 1. Create heroku app (Can be done online via Heroku GUI)
 2. Within the app, go to Settings
