@@ -1,9 +1,18 @@
-TITLE
+<h1> How to run the webserver: </h1>
+Run the webserver locally via 
 
-Intro
+``` python3 app.py ```
 
-How it works:
-In order to spin up your own instance of the website from this repo
+
+Deploy a new version
+
+``` git push heroku master ```
+
+
+<h1>Recreating this website: </h1>
+
+<h3> In order to spin up your own instance of the website from this repo </h3>
+
 1. Create heroku app (Can be done online via Heroku GUI)
 2. Within the app, go to Settings
    1. Within Config Vars, Set "PROJECT_PATH" to "Website" (We're creating a config/env var called PROJECT_PATH, which should point to the folder that holds our app.py file)
@@ -17,12 +26,9 @@ In order to spin up your own instance of the website from this repo
    1. ``` $ heroku git:remote -a example-app ``` 
     
         ```# example-app shoul dbe the name of your new heroku app ```
-    2. Change to point to your own github repo
+    1. Change to point to your own github repo
         
         ``` git remote set-url origin http://github.com/YOU/YOUR_REPO ```
 
 
-How to run the webserver:
-Run the webserver locally via 
 
-``` python3 app.py ```
