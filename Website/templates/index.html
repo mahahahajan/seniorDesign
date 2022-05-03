@@ -3,9 +3,8 @@
 
     <head>
         <meta charset="UTF-8" />
-        <meta http-equiv="refresh" content="5">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Fake News Classifier</title>
+        <title> CASA Smart Power 2022 </title>
         <link rel="icon" href="{{ url_for('static', filename='img/icon.png') }}" type="image/png" />
         <link rel="stylesheet" href="{{ url_for('static', filename='common.css') }}" />
         <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
@@ -26,55 +25,46 @@
 
     <body>
         <div id="particles-js"></div>
-        <div id="content">
-            <h1 id="header">Power Detector</h1>
-            <script>
-                function update_values() {
-                    url = '/updateData';
-                    fetch(url, {method:'POST'}).then(function(response) {
-                        return response.json();
-                      })
-                      .then(function(myJson)
-                      {
-                        store = myJson;
-                        //This line prints out "{somedata":"somedatavalue","somedata1":"somedatavalue1"}" every 2000 milliseconds
-                        console.log(store);
-                      });
-                }
-                setInterval(update_values, 2000);
-            </script>
-            <div id="spacer"></div>
-            <!-- {% for row in data2 %}
-            <p> {{ row }} </p>
-            {% endfor %} -->
-            <div class="table">
-                <div class="flex wrap">
-                    {% for row in data %}
-                    <div class="col {{ row[3] }}">
-                        <img src="{{ url_for('static', filename='img/' + row[0]) }}" alt="Avatar">
-                        <div class="container">
-                            <h4><b>{{ row[1] }} </b></h4>
-                            <p>{{ row[2] }}</p>
-                        </div>
-                    </div>
-                    {% endfor %}
-                    <!-- <div class="col">
-                        <img src="{{ url_for('static', filename='img/coffeemachine.png') }}" alt="Avatar">
-                        <div class="container">
-                            <h4><b>Coffee Machine</b></h4>
-                            <p>Architect & Engineer</p>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <img src="{{ url_for('static', filename='img/lamp.png') }}" alt="Avatar">
-                        <div class="container">
-                            <h4><b>Lamp</b></h4>
-                            <p>Architect & Engineer</p>
-                        </div>
-                    </div> -->
-                </div>
+        <!-- NAV BAR -->
+        <!-- TITLE and Subtitle-->
+        <section>
+            <div id="titleSection">
+                <h4> CASA Smart Power 2022</h4>
+                <h1> The Power Detector </h1> 
             </div>
-        </div>
+        </section>
+        <!-- About Project -->
+        <section class="mainSection white" id="about">
+            <div class="title" id="aboutTitle">
+                <h1> What is the Power Detector </h1>
+            </div>
+            <div class="content" id="aboutContent">
+                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, libero. Ullam molestias dolore explicabo consequatur corporis impedit nobis earum quidem consectetur magnam, minus, accusantium qui. Autem libero illo ipsam corrupti.</p>
+                <div id="aboutSpacer"></div>
+                <img src="{{ url_for('static', filename='img/graphic.png') }}" alt="Graphic" id="aboutImg">
+            </div>
+        </section>
+        <!-- About Team + Link to Team Page -->
+        <section class="mainSection black" id="team">
+            <div class="title" id="teamTitle">
+                <h1> Who are we? </h1>
+            </div>
+            <div class="content" id="teamContent">
+                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, libero. Ullam molestias dolore explicabo consequatur corporis impedit nobis earum quidem consectetur magnam, minus, accusantium qui. Autem libero illo ipsam corrupti.</p>
+                <div id="aboutSpacer"></div>
+                <img src="{{ url_for('static', filename='img/graphic.png') }}" alt="Graphic" id="aboutImg">
+            </div>
+        </section>
+        <!-- Link to Demo + Demo Video -->
+        <section class="mainSection white" id="team">
+            <div class="title" id="teamTitle">
+                <h1> Demo </h1>
+            </div>
+            <div class="content" id="demoContent">
+                <a class="button" href="/demo" > CLICK TO SEE A REAL TIME DEMO </a>
+            </div>
+        </section>
+
     </body>
 
 </html>

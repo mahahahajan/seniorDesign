@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="refresh" content="5">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title> CASA Smart Power 2022 </title>
+        <link rel="icon" href="{{ url_for('static', filename='img/icon.png') }}" type="image/png" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='common.css') }}" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+            integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+        <script type="text/javascript">
+            particlesJS.load(
+                'particles-js',
+                "{{ url_for('static', filename='particles.json') }}",
+                function () {
+                    console.log('particles.json has loaded');
+                }
+            );
+        </script>
+        <script src="{{ url_for('static', filename='app.js') }}"></script>
+    </head>
+
+    <body>
+        <div id="particles-js"></div>
+        <div id="content">
+            <h1 id="header">Power Detector</h1>
+            <script>
+                function update_values() {
+                    url = '/updateData';
+                    fetch(url, {method:'POST'}).then(function(response) {
+                        return response.json();
+                      })
+                      .then(function(myJson)
+                      {
+                        store = myJson;
+                        //This line prints out "{somedata":"somedatavalue","somedata1":"somedatavalue1"}" every 2000 milliseconds
+                        console.log(store);
+                      });
+                }
+                setInterval(update_values, 2000);
+            </script>
+            <div id="spacer"></div>
+            <!-- {% for row in data2 %}
+            <p> {{ row }} </p>
+            {% endfor %} -->
+            <div class="table">
+                <div class="flex wrap">
+                    {% for row in data %}
+                    <div class="col {{ row[3] }}">
+                        <img class="cardImg" src="{{ url_for('static', filename='img/' + row[0]) }}" alt="Avatar">
+                        <div class="container">
+                            <h4><b>{{ row[1] }} </b></h4>
+                            <p>{{ row[2] }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <!-- <div class="col">
+                        <img src="{{ url_for('static', filename='img/coffeemachine.png') }}" alt="Avatar">
+                        <div class="container">
+                            <h4><b>Coffee Machine</b></h4>
+                            <p>Architect & Engineer</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <img src="{{ url_for('static', filename='img/lamp.png') }}" alt="Avatar">
+                        <div class="container">
+                            <h4><b>Lamp</b></h4>
+                            <p>Architect & Engineer</p>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

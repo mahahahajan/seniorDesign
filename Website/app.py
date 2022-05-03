@@ -1,3 +1,4 @@
+from crypt import methods
 from flask import Flask, request, redirect, url_for, jsonify, send_file, make_response, render_template
 
 no_device = ("noDevice.png", "No devices found", "Hm.. it doesn't look like you have anything plugged in", "noDevice")
@@ -183,16 +184,27 @@ def update_data():
     return data2_json
 
 
-@app.route('/', methods=['GET', 'POST'])
-def index():
+@app.route('/demo', methods=['GET', 'POST'])
+def demo(): 
     try:
         print(data2)
         data = convert_num_to_devices(data2)
         # print("Data is " + data[0][1])
-        return render_template('index.html',  fields=fields, data=data, data2=data2)
+        return render_template('demo.html',  fields=fields, data=data, data2=data2)
     except Exception as e:
         print("error: " + str(e))
         return str(e)
+
+# TODO: / should point to index, create a new route for demo
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    try:
+        return render_template('index.html')
+    except Exception as e:
+        print("error: " + str(e))
+        return str(e)
+
+
 
 
 if __name__ == '__main__':
