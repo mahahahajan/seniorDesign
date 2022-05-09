@@ -49,6 +49,7 @@ section {
     /* display: flex;
     margin-right: 3%;
     margin-left: 4%; */
+    font-size: 21px;
 }
 
 .title {
@@ -151,6 +152,9 @@ section {
     }
     .button {
         font-size: 16px;
+    }
+    p {
+        font-size: .35em;
     }
 }
 

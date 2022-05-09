@@ -36,10 +36,15 @@
         <!-- About Project -->
         <section class="mainSection white" id="about">
             <div class="title" id="aboutTitle">
-                <h1> What is the Power Detector </h1>
+                <h1> What is the Smart Power Detector </h1>
             </div>
             <div class="content" id="aboutContent">
-                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, libero. Ullam molestias dolore explicabo consequatur corporis impedit nobis earum quidem consectetur magnam, minus, accusantium qui. Autem libero illo ipsam corrupti.</p>
+                <p> The Smart Power Detector is a Senior Design Project from the University of Texas at Austin, sponsored by Boeing. The project aims to use 
+                    non-intrusive load monitoring (NILM) and machine learning models in order distinguish individual devices from an aggregate signal. The team collected data via an emonPi,
+                    and used it both for training as well as testing purposes. Indivudual power profiles of devices were determined via the emonPi and used to train the macchine learning model.
+                    Once the model was trained, real time data from the emonPi was fed to the machine learning model, to determine if the model could accurately determine which device was plugged in.
+                    <!-- You can see a video of the demo here: -->
+                </p>
                 <div id="aboutSpacer"></div>
                 <img src="{{ url_for('static', filename='img/graphic.png') }}" alt="Graphic" id="aboutImg">
             </div>
@@ -50,9 +55,10 @@
                 <h1> Who are we? </h1>
             </div>
             <div class="content" id="teamContent">
-                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, libero. Ullam molestias dolore explicabo consequatur corporis impedit nobis earum quidem consectetur magnam, minus, accusantium qui. Autem libero illo ipsam corrupti.</p>
+                <p> We are a group of seniors from the University of Texas at Austin. This project was completed as a part of our Senior Design course, and was sponsored by the CASA team at Boeing. 
+                    The team (from left to right): Travis Mongoven, Joseph Tombari, Santhosh Saravanan, Kevin Aguilar, Kai Cheu, Brent Zhuang, Pulkit Mahajan </p>
                 <div id="aboutSpacer"></div>
-                <img src="{{ url_for('static', filename='img/graphic.png') }}" alt="Graphic" id="aboutImg">
+                <img src="{{ url_for('static', filename='img/team.jpg') }}" alt="Graphic" id="aboutImg">
             </div>
         </section>
         <!-- Link to Demo + Demo Video -->
